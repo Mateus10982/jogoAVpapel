@@ -1,0 +1,19 @@
+#ty{position:absolute;
+ width:90px;
+ height:50px; 
+ left:30%; 
+ top:60%; 
+ }
+#fundo{position:absolute;
+ width:1800px;
+ height:500px; 
+ left:2%; 
+ top:48%; 
+ }
+ img{
+position:absolute;
+ width:100%;
+ height:100%; 
+ left:0%; 
+ top:0%; 
+ }
