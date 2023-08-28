@@ -9,7 +9,8 @@ const div_area2= document.getElementById('area2');
 const div_area3= document.getElementById('area3');
 const div_area4= document.getElementById('area4');
 const menudeResultado= document.getElementById('menudeResultado');
-
+	var posiUsuario;
+	var barreira;
 var inclina=0;
 var leftU =25;
 var topU=95;
@@ -28,6 +29,7 @@ var ganhou=false;
 	function novamente(){
 		 	location.reload(true);
 	}
+
 
  if(pauseplay){
 document.addEventListener("keydown",function(event){
@@ -102,7 +104,7 @@ function gravidade() {
 setInterval(function(){
 		if(pauseplay){
 
-	const posiUsuario = Usuario.getBoundingClientRect();
+	 posiUsuario = Usuario.getBoundingClientRect();
   const posiFundo = Fundo.getBoundingClientRect();
 
   
@@ -137,7 +139,7 @@ setInterval(function(){
 function areas(){
 	setInterval(function(){
 
-    const posiUsuario = Usuario.getBoundingClientRect();
+     posiUsuario = Usuario.getBoundingClientRect();
     const posiarea1 = div_area1.getBoundingClientRect();
     const posiarea2 = div_area2.getBoundingClientRect();
     const posiarea3 = div_area3.getBoundingClientRect();
@@ -189,11 +191,11 @@ function colisaoObst(){
 switch (local) {
 case 1:
 		let obsTarea1=["obs1","obs2","obs3","obs4","obs5","obs6","obs7"];
-	for(let I=0;I <= obsTarea1.length;++I){
+	for(let I=0;I < obsTarea1.length;++I){
 
 const obsatualID= document.getElementById(obsTarea1[I]);
 const obsatual = obsatualID.getBoundingClientRect();
-    const posiUsuario = Usuario.getBoundingClientRect();
+     posiUsuario = Usuario.getBoundingClientRect();
 
 		if (
         posiUsuario.right >=obsatual.left &&
@@ -208,11 +210,11 @@ const obsatual = obsatualID.getBoundingClientRect();
 break;
 case 2:
 		let obsTarea2=["obs8","obs9","obs10","obs11","obs12","obs13","obs14","obs15","obs16","obs17","obs18","obs19","obs20"];
-	for(let I=0;I<= obsTarea2.length ;++I){
+	for(let I=0;I< obsTarea2.length ;++I){
 
 const obsatualID= document.getElementById(obsTarea2[I]);
 const obsatual = obsatualID.getBoundingClientRect();
-    const posiUsuario = Usuario.getBoundingClientRect();
+     posiUsuario = Usuario.getBoundingClientRect();
 
 		if (
         posiUsuario.right >=obsatual.left &&
@@ -232,7 +234,7 @@ case 3:
 
 	const obsatualID= document.getElementById(obsTarea3[I]);
 	const obsatual = obsatualID.getBoundingClientRect();
-    const posiUsuario = Usuario.getBoundingClientRect();
+     posiUsuario = Usuario.getBoundingClientRect();
 	
 	if(obsatualID === obs38especialra && 
 		posiUsuario.right >=obsatual.left &&
@@ -268,11 +270,11 @@ case 3:
 break;
 case 4:
 	let obsTarea4=["obs39","obs40"];
-	for(let I=0;I <= obsTarea4.length;++I){
+	for(let I=0;I < obsTarea4.length;++I){
 
 const obsatualID= document.getElementById(obsTarea4[I]);
 const obsatual = obsatualID.getBoundingClientRect();
-    const posiUsuario = Usuario.getBoundingClientRect();
+     posiUsuario = Usuario.getBoundingClientRect();
 
 		if ( posiUsuario.right >=obsatual.right ) {
 		ganhou=true;
@@ -298,8 +300,6 @@ function falapause(){
 
 if(!pauseplay){
 	letra.innerHTML="jogo pausado";
-}else if(pauseplay){
-		letra.innerHTML="jogo em andamento";
 }
 },100);
 }
@@ -317,7 +317,7 @@ setInterval(function(){
 if(pauseplay){
 	const posiUsuario = Usuario.getBoundingClientRect();
     const positela1 = tela.getBoundingClientRect();
-    const barreira = muro.getBoundingClientRect();
+     barreira = muro.getBoundingClientRect();
 
      if (posiUsuario.bottom >= positela1.bottom ){
   topU -= 2;
