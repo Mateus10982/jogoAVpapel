@@ -254,6 +254,9 @@ case 3:
         posiUsuario.left <= obsatual.right &&
         posiUsuario.top <= obsatual.bottom)
 	{
+		let ray = document.getElementById('ray');
+		ray.classList.remove('raio');
+		ray.classList.add('raio2');
 		resultado=false;
 		break;
 	}
