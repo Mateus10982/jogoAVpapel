@@ -236,29 +236,13 @@ case 3:
 	const obsatual = obsatualID.getBoundingClientRect();
      posiUsuario = Usuario.getBoundingClientRect();
 	
-	if(obsatualID === obs38especialra && 
-		posiUsuario.right >=obsatual.left &&
-        posiUsuario.bottom >= obsatual.top &&
-        posiUsuario.left <= obsatual.right &&
-        posiUsuario.top <= obsatual.bottom)
+	if(obsatualID === obs36especial && 
+		posiUsuario.right >=obsatual.left)
 	{
 		let ray = document.getElementById('ray');
 		ray.classList.remove('raio');
 		ray.classList.add('raio2');
 		
-	}
-	
-	else if(obsatualID === obs36especial && 
-		posiUsuario.right >=obsatual.left &&
-        posiUsuario.bottom >= obsatual.top &&
-        posiUsuario.left <= obsatual.right &&
-        posiUsuario.top <= obsatual.bottom)
-	{
-		let ray = document.getElementById('ray');
-		ray.classList.remove('raio');
-		ray.classList.add('raio2');
-		resultado=false;
-		break;
 	}
 	else if(
         posiUsuario.right >=obsatual.left &&
@@ -341,6 +325,9 @@ if(pauseplay){
 }
 },100);
 }
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 function limii(){
 	setInterval(function(){
 		if(posiUsuario.right >= barreira.left){
@@ -348,11 +335,13 @@ function limii(){
 	}},100);
 	
 }
-function finalizarjogo(){
+ async function finalizarjogo(){
+	  await delay(2000);
 	if(ganhou){
-	menudeResultado.style.left="5%"
+	menudeResultado.style.left="5%";
 	}
 	else if(!resultado){
-		menudeResultado.style.left="5%"
+	menudeResultado.style.left="5%";
+
 	}
 }
