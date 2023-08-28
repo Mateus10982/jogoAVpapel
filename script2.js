@@ -286,7 +286,9 @@ function falapause(){
 		setInterval(function(){
 
 if(!pauseplay){
+	window.onload =function(){
 	letra.innerHTML="jogo pausado";
+	}
 }
 },100);
 }
