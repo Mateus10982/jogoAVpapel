@@ -9,6 +9,8 @@ const div_area2= document.getElementById('area2');
 const div_area3= document.getElementById('area3');
 const div_area4= document.getElementById('area4');
 const menudeResultado= document.getElementById('menudeResultado');
+const telaPReta= document.getElementById('telaPReta');
+const result22= document.getElementById('result22');
 	var posiUsuario;
 	var barreira;
 var inclina=0;
@@ -66,7 +68,7 @@ function moveUsuarioCelular(event){
 		Usuario.style.transform="rotate("+inclina+"deg)";
 		
     }else if (event.target.id === "advance") {
-      leftU +=13;
+      leftU +=4;
 		Usuario.style.left=leftU +"px";
     }
 	}
@@ -110,12 +112,11 @@ setInterval(function(){
   
   if ( posiUsuario.top <= posiFundo.bottom ) {
     topU += gra;
-	if(limite){ leftU+= 2; Usuario.style.left=leftU +"px"; }else if(!limite){leftU -= 19;}
+	if(limite){ leftU+= 2; Usuario.style.left=leftU +"px"; }else if(!limite){leftU -= 2;}
 	inclina =(inclina > 0 ) ? --inclina : (inclina < 0)? ++inclina : inclina;
     Usuario.style.top = topU + "px";
 		Usuario.style.transform="rotate("+inclina+"deg)";
-  }
-					}
+  }					}
 },90);
 
 }
@@ -134,7 +135,7 @@ setInterval(function(){
     Fundo.style.left = leftfundo + "px";
   }
 		}
-},speed);}
+},speed);	}
 
 function areas(){
 	setInterval(function(){
@@ -313,7 +314,10 @@ if(pauseplay){
   Usuario.style.top = topU + "px";
     }
 	else if(posiUsuario.top <= positela1.top){
-	topU += 2;
+	topU += 10;
+  Usuario.style.top = topU + "px";
+	}else if(posiUsuario.top < positela1.top){
+	topU += positela1.top+3;
   Usuario.style.top = topU + "px";
 	}
     else if(posiUsuario.left <= positela1.left){
@@ -340,10 +344,15 @@ function limii(){
  async function finalizarjogo(){
 	  await delay(2000);
 	if(ganhou){
+			pauseplay =false;
 	menudeResultado.style.left="5%";
+	telaPReta.style.left="0.5%";
+	result22.style.color="green";
+	result22.innerHTML="Você ganhou! Parabéns!";
 	}
 	else if(!resultado){
 	menudeResultado.style.left="5%";
+	telaPReta.style.left="0.5%";
 
 	}
 }
