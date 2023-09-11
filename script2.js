@@ -310,14 +310,11 @@ if(pauseplay){
      barreira = muro.getBoundingClientRect();
 
      if (posiUsuario.bottom >= positela1.bottom ){
-  topU -= 2;
+  topU -= positela1.bottom+1;
   Usuario.style.top = topU + "px";
     }
 	else if(posiUsuario.top <= positela1.top){
-	topU += 10;
-  Usuario.style.top = topU + "px";
-	}else if(posiUsuario.top < positela1.top){
-	topU += positela1.top+3;
+	topU += positela1.top+1;
   Usuario.style.top = topU + "px";
 	}
     else if(posiUsuario.left <= positela1.left){
