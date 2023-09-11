@@ -308,15 +308,15 @@ if(pauseplay){
 	const posiUsuario = Usuario.getBoundingClientRect();
     const positela1 = tela.getBoundingClientRect();
      barreira = muro.getBoundingClientRect();
-
+let botty;
      if (posiUsuario.bottom >= positela1.bottom ){
-  topU -= positela1.bottom+1;
-  Usuario.style.top = topU + "px";
-    }
-	else if(posiUsuario.top <= positela1.top){
-	topU += positela1.top+1;
+  botty = positela1.bottom+1;
+  Usuario.style.bottom = botty + "px";
+    }else if(posiUsuario.top <= positela1.top){
+	topU = positela1.top+1;
   Usuario.style.top = topU + "px";
 	}
+	
     else if(posiUsuario.left <= positela1.left){
 	leftU -=2;
 	Usuario.style.left=leftU +"px";
