@@ -349,10 +349,17 @@ function limii(){
 	telaPReta.style.left="0.5%";
 	result22.style.color="green";
 	result22.innerHTML="Você ganhou! Parabéns!";
+	document.addEventListener("keydown",function(event){	env(event);  });
 	}
 	else if(!resultado){
 	menudeResultado.style.left="5%";
 	telaPReta.style.left="0.5%";
+		document.addEventListener("keydown",function(event){	env(event);  });
 
 	}
+}
+function env(event){
+    if(event.keyCode === 13){
+        novamente();
+    }
 }
