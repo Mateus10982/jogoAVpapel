@@ -1,11 +1,11 @@
 # jogoAVpapel
 conhecimento usado nesse projeto:
-_Manipulação do DOM (Document Object Model)
-_Event Listeners
-_Condicionais e Loops
-_Funções
-_Manipulação de Estilos CSS
-_Temporizadores (Timers)
-_Promessas e Assincronicidade
-_Variáveis e Escopo
+_Manipulação do DOM (Document Object Model)<br>
+_Event Listeners<br>
+_Condicionais e Loops<br>
+_Funções<br>
+_Manipulação de Estilos CSS<br>
+_Temporizadores (Timers)<br>
+_Promessas e Assincronicidade<br>
+_Variáveis e Escopo<br>
 _Eventos e Manipulação de Elementos HTML
