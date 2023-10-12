@@ -1,5 +1,5 @@
 # jogoAVpapel
-conhecimento usado nesse projeto:
+conhecimento usado nesse projeto:<br>
 _Manipulação do DOM (Document Object Model)<br>
 _Event Listeners<br>
 _Condicionais e Loops<br>
