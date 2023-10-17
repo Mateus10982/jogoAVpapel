@@ -1,3 +1,6 @@
+document.addEventListener("keydown", function (e) {
+  if ((e.ctrlKey && e.key === "u") || (e.ctrlKey && e.key === "c")) {
+    e.preventDefault();  }});
 const Usuario= document.getElementById('Usuario');
 const Fundo= document.getElementById('fundo');
 const tela= document.getElementById('tela');
